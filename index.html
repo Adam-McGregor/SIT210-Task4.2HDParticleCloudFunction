@@ -1,0 +1,24 @@
+<!DOCTYPE HTML5>
+<html>
+
+	<body>
+		<div style="text-align: center">
+			<h1>Light Toggler</h1>
+			<button onclick="ToggleLed('red')">Red LED</button>
+			<button onclick="ToggleLed('blue')">Blue LED</button>
+			<button onclick="ToggleLed('green')">Green LED</button>
+		</div>
+	</body>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particle-api-js/7.3.0/particle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+		var particle = new Particle();
+		function ToggleLed(colour)
+		{
+    			particle.callFunction({ deviceId: "device", name: "lights", argument: colour, auth: "Token" });
+		}
+	</script>
+
+</html>
